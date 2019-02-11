@@ -127,8 +127,11 @@ void cricket_team::get_team_info()
 void cricket_team::destructor()
 {
 	delete[] members;
+	members =nullptr;
 	delete[] team_name;
-	delete[] last10score;
+	team_name = nullptr;
+	for (int i =0; i < 10; i++)
+		last10score[i] = NULL;
 	rank = NULL;
 	captain = "";
 	scores_set = NULL;
